@@ -1,104 +1,261 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+   align-items: flex-start;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h4{
+  margin-bottom:1.5rem;
+}
+
+/* Left Column (Profile Sidebar) */
+.left-column {
+  background: #1e1e2f;
+  color: #fff;
+  width: 320px;
+  padding: 3rem 2rem;
+  text-align: left;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;          /* crop image to fill container */
+  object-position: center 10%; /* move image down, show lower part */
+  margin-bottom: 1.5rem;
+  border: 4px solid #4ecca3;
+  border-radius: 50%;         /* circle shape */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.left-column h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #4ecca3;
+  text-align: center;
+}
+
+.left-column .title {
+  font-size: 1.1rem;
+  color: #a0a0b8;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.left-column h2 {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #4ecca3;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #3d3d5c;
+  padding-bottom: 5px;
+}
+
+.left-column h5 {
+  font-size: 0.85rem;
+  color: #d1d1e0;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.skills {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.95rem;
+  color: #e2e2e2;
+}
+
+
+
+.project ul{
+  margin: 0.6rem 0;
+  padding-left: 20px;  
+  position: relative;
   
-  body {
-    background: #f4f4f4;
-    color: #333;
-  }
-  
-  .container {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  /* Left Column (Profile Sidebar) */
-  .left-column {
-    background: #1e1e2f;
-    color: #fff;
-    width: 280px;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 3px solid #fff;
-  }
-  
-  .left-column h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  .left-column .title {
-    font-size: 1rem;
-    color: #bbb;
-    margin-bottom: 1.5rem;
-  }
-   .title {
-    font-size: 1rem;
-    color: #bbb;
-    margin-bottom: 1.5rem;
-  }
-  
-  .left-column h2 {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-  
-  .skills {
-    list-style: none;
-    padding-left: 0;
-    font-size: 0.95rem;
-    color: #ddd;
-  }
-  
-  .skills li {
-    margin: 0.3rem 0;
-  }
-  .h5{
-  
-        list-style: none;
-        padding-left: 0;
-        font-size: 0.95rem;
-        color: #ddd;
-    
-  }
-  /* Main Content */
-  .main-content {
-    flex: 1;
-    padding: 2rem;
-  }
-  
-  .main-content section {
-    margin-bottom: 3rem;
-  }
-  
-  .project {
-    background: white;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .project a {
-    color: #0077cc;
-    text-decoration: none;
-  }
-  
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
-    margin-top: 2rem;
-  }
+}
+.project li{
+  padding-bottom:10px;
+}
+.skills li {
+  margin: 0.6rem 0;
+  padding-left: 15px;
+  position: relative;
+}
+
+.skills li::before {
+  content: "•";
+  color: #4ecca3;
+  position: absolute;
+  left: 0;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 3rem 2rem;
+}
+
+
+
+.main-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #1e1e2f;
+}
+
+.project {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image-placeholder {
+  width: calc(100% + 2rem);
+  height: 180px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: -1rem -1rem 1rem -1rem;
+}
+
+.project-image-placeholder::after {
+  content: "Project Image";
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.project h3 {
+  color: #1e1e2f;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.project p {
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+}
+
+.project a {
+  color: #4ecca3;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  padding: 8px 16px;
+  background: #f0fdf9;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.project a:hover {
+  background: #4ecca3;
+  color: white;
+}
+
+#contact a {
+  color: #4ecca3;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.skill-box {
+  margin-bottom: 20px;
+}
+
+.skill-title {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.skill-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  height: 30px;
+  overflow: hidden;
+  display: flex; /* make inner divs line up horizontally */
+}
+
+.skill-level {
+  height: 100%;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.skill-level.html { width: 30%; background-color: #04AA6D; }
+.skill-level.css { width: 40%; background-color: #f44336; }
+.skill-level.js { width: 10%; background-color: #2196F3; }
+.skill-level.python { width: 20%; background-color: #306998; }
+
+.skill-level.htm { width: 17.5%; background-color: #04AA6D; }
+.skill-level.cs { width: 17.5%; background-color: #2196F3; }
+.skill-level.py { width: 35%; background-color: #f44336; }
+.skill-level.flask { width: 25%; background-color: mediumpurple; }
+.skill-level.api { width: 5%; background-color: lightpink; }
+
+
+.skill-level.ht { width: 12.5%; background-color: #04AA6D; }
+.skill-level.c { width: 12.5%; background-color: #2196F3; }
+.skill-level.p { width: 30%; background-color: #f44336; }
+.skill-level.fl { width: 25%; background-color: mediumpurple; }
+.skill-level.fire { width: 10%; background-color: lightpink;}
+.skill-level.linux { width: 10%; background-color: navy;}
+
+.skill-level.po { width: 80%; background-color: #f44336; }
+.skill-level.rob { width: 20%; background-color: #2196F3; }
+
+<div class="skill-level p">Python</div>
+ <div class="skill-level rob">Roboflow</div>
